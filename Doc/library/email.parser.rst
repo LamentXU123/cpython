@@ -48,7 +48,7 @@ methods.
 FeedParser API
 ^^^^^^^^^^^^^^
 
-The :class:`BytesFeedParser`, imported from the :mod:`email.parser.FeedParser`
+The :class:`BytesFeedParser`, imported from the :mod:`!email.feedparser`
 module, provides an API that is conducive to incremental parsing of email messages,
 such as would be necessary when reading the text of an email message from a
 source that can block (such as a socket).  The :class:`BytesFeedParser` can of
@@ -155,7 +155,7 @@ message body, instead setting the payload to the raw body.
 
       Read all the data from the binary file-like object *fp*, parse the
       resulting bytes, and return the message object.  *fp* must support
-      both the :meth:`~io.IOBase.readline` and the :meth:`~io.TextIOBase.read`
+      both the :meth:`~io.IOBase.readline` and the :meth:`!io.IOBase.read`
       methods.
 
       The bytes contained in *fp* must be formatted as a block of :rfc:`5322`
@@ -314,7 +314,7 @@ Here are some notes on the parsing semantics:
   their :mimetype:`multipart`\ -edness.  Such messages may have a
   :mailheader:`Content-Type` header of type :mimetype:`multipart`, but their
   :meth:`~email.message.EmailMessage.is_multipart` method may return ``False``.
-  If such messages were parsed with the :class:`~email.parser.FeedParser`,
+  If such messages were parsed with the :class:`~email.feedparser`,
   they will have an instance of the
   :class:`~email.errors.MultipartInvariantViolationDefect` class in their
   *defects* attribute list.  See :mod:`email.errors` for details.
